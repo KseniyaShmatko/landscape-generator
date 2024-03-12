@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Генерирование ландшафта</title>
+        <meta name="description" content="Генерация фрактальной поверхности алгоритмом Diamond-Square" />
+        <meta name="author" content="Ксения Шматко" />
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css2?family=Roboto+Mono" type="text/css" />
+        <link rel="shortcut icon" href="../img/mountain.ico" type="image/x-icon">
+    </head>
+    <body>
+        <header>
+           <div class="settings">
+            <section>
+                <h2>Размер поверхности</h2>
+                <input type="number" name="size" min="100" max="400" step="50" required="required">
+            </section>
+            <section>
+                <h2>Коэффициент шероховатости</h2>
+                <input type="number" name="rouhgness" min="0" max="5" step="1" required="required">
+            </section>
+            <section>
+                <h2>Глубина рекурсии</h2>
+                <input type="number" name="recursion" min="0" max="9" step="1" required="required">
+            </section>
+            <section>
+                <h2>Настроить цвета</h2>
+                <a href="#formColor" id="colors"></a>
+                <div class="form" id="formColor">
+                    <div class="wrapper">
+                        <h2>Выберите цвета</h2>
+                        <a href="#" class="close">&times;</a>
+                        <div class="imgGroup">
+                            <img id="highImg" src="../img/high.png"/>
+                            <img id="middleImg" id="middleColor" src="../img/middle.png"/>
+                            <img id="groundImg" src="../img/ground.png"/>
+                            <img id="borderImg" src="../img/border.png"/>
+                        </div>
+                        <div class="inputGroup">
+                            <div class="colorGroup">
+                                <label for="highColor">Вершина</label>
+                                <input type="color" id="highColor" class="color execute" value="#cee1e6">
+                            </div>
+                            <div class="colorGroup">
+                                <label for="middleColor">Склон</label>
+                                <input type="color" id="middleColor" class="color" value="#5F6263">
+                            </div>
+                            <div class="colorGroup">
+                                <label for="groundColor">Подошва</label>
+                                <input type="color" id="groundColor" class="color" value="#95bb9d">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>Построить</h2>
+                <button id="start"></button>
+            </section>
+           </div>
+        </header>
+        <main>
+            <canvas id="canvas" height="800px" width="1040px">Your browser doesn't support canvas element.</canvas>
+        </main>
+        <script type="importmap">
+            {
+              "imports": {
+                "glsl-canvas-js": "https://unpkg.com/glsl-canvas-js@0.2.6/dist/esm/glsl.js",
+                "promise-polyfill": "https://unpkg.com/promise-polyfill@8.2.0/src/index.js",
+                "gl-matrix": "https://unpkg.com/gl-matrix@3.3.0/esm/index.js"
+              }
+            }
+        </script>
+        <script type='module' src="../drawScene/main.js"></script>
+        <script type='module' src="../drawScene/math.js"></script>
+        <script type='module' src="../objects/surface.js"></script>
+        <script type='module' src="../objects/light.js"></script>
+        <script type='module' src="../objects/camera.js"></script>
+        <script type='module' src="../drawScene/draw.js"></script>
+        <script type='module' src="../drawScene/color.js"></script>
+        <h2 id="warning">Программа не может быть использована на Вашем устройстве из-за малых размеров экрана.</h2>
+    </body>
+</html>

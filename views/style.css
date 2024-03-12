@@ -1,0 +1,224 @@
+* {
+  margin: 0 auto;
+  padding: 0 auto;
+  border: 0;
+
+  font-size: 1.5vw;
+  font-family: "Roboto Mono", Arial, sans-serif;
+  color: #393E46;
+}
+
+.settings {
+  float: left;
+  width: 25vw;
+  height: 100vh;
+  background-color: #6D9886;
+  z-index: 2;
+  box-shadow: 1px 1px 4px 4px #202124;
+  border-radius: 0px 5px 5px 0px;
+}
+
+section {
+  display: block;
+  margin: 10% auto;
+  text-align: center;
+}
+
+input,
+button {
+  height: 4vh;
+  width: 7vw;
+  margin-top: 2%;
+
+  text-align: center;
+
+  border-radius: 0.25rem;
+}
+
+input:hover {
+  transition: 0.1s;
+  outline: 3px solid #9EB384;
+}
+
+button {
+  width: 10vw;
+  background-color: #f2e7d5;
+}
+
+button:hover {
+  transition: 0.3s;
+  background-color: #9EB384;
+}
+
+button:active {
+  transition: 0.1s;
+  background-color: #7a876a;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  z-index: 1;
+
+  background-color: #2f3935;
+}
+
+/* popup window */
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: rgba(0,0,0,0.6);
+  transition: opacity 0.3s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.form:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.wrapper {
+  height: 60vh;
+  width: 40vw;
+  margin: 10vh;
+  padding: 1vw;
+  
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1.5fr 1fr;
+  position: relative;
+
+  transition: all 0.3s ease-in-out;
+  border-radius: 1rem;
+  background-color: #ffffff;
+}
+
+.wrapper h2 {
+  position: absolute;
+  top: 25px;
+  font-size: 1.7vw;
+}
+
+/* images of mountain*/
+img {
+  transition: filter 0.5s ease;
+  width: 70%;
+  height: 70%;
+}
+
+#highImg {
+  position: relative;
+  top: 160px;
+  z-index: 1;
+}
+
+#middleImg {
+  position: relative;
+  top: -50px;
+  z-index: 0;
+}
+
+#groundImg {
+  position: relative;
+  top: -260px;
+  z-index: 1;
+}
+
+#borderImg {
+  position: relative;
+  top: -470px;
+  z-index: 2;
+}
+
+/* colorpickers */
+.inputGroup {
+  margin-top: -300px;
+}
+
+.colorGroup {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  margin: 70px;
+}
+
+.colorGroup input {
+  width: 10vw;
+}
+
+/* links */
+:any-link {
+  width: 10vw;
+  height: 4vh;
+  margin-top: 2%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  border-radius: 0.25rem;
+  background-color: #f2e7d5;
+}
+
+a:hover{
+  transition: 0.3s;
+  background-color: #9EB384;
+}
+
+a:active{
+  transition: 0.1s;
+  background-color: #7a876a;
+}
+
+.close {
+  width: 40px;
+  height: 40px;
+  margin-top: 0;
+  padding: 0;
+
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  border-radius: 0.5rem;
+  transition: 0.3s;
+}
+
+canvas {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+
+  background-color: #F7F7F7;
+}
+
+#warning {
+  display: none;
+}
+
+@media not screen, (max-width: 1390px), (height < 810px) {
+  main,
+  header {
+    display: none;
+  }
+  #warning {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+}
