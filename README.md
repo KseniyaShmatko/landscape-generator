@@ -6,7 +6,7 @@
 
 ## Деплой
 
-Проект развернут и доступен на GitHub Pages по следующему URL-адресу: https://mywebsite.
+Проект развернут и доступен на GitHub Pages: https://kseniyashmatko.github.io/landscape-generator/
 
 ## Описание проекта
 
